@@ -61,7 +61,11 @@ def generate_new_password(password):
             continue
     return password
 
+
+
 password = generate_new_password(password)
+
+
 
 f2.write(str(password))
 f2.close
