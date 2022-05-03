@@ -1,6 +1,6 @@
 f1 = open("input.txt", "r")
 f2 = open("output1.txt", "w")
-password = f1.read()
+a = f1.read()
 
 
 
@@ -41,32 +41,32 @@ def contains_two_pairs(string):
 
 
 
-def generate_new_password(password):
+def generate_new_password(a):
     valid = False
     evil_letters = ["i", "o", "l"]
     while not valid:
         valid = True
-        password = increase_string(password)
-        if not contains_three_increasing(password):
+        a = increase_string(a)
+        if not contains_three_increasing(a):
             valid = False
             continue
         for evil_letter in evil_letters:
-            if evil_letter in password:
+            if evil_letter in a:
                 valid = False
                 break
         if not valid:
             continue
-        if not contains_two_pairs(password):
+        if not contains_two_pairs(a):
             valid = False
             continue
-    return password
+    return a
 
 
 
-password = generate_new_password(password)
+a = generate_new_password(password)
 
 
 
-f2.write(str(password))
+f2.write(str(a))
 f2.close
 f1.close
